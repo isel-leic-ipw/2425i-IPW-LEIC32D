@@ -94,7 +94,8 @@ console.log("12:", point5, point5.color); // Search property in the prototype
 
 // -----------------------------
 // Prototype: example with built-in constructor function String: add a new enclose method.
-let s1 = new String("ISEL");
+//let s1 = new String("ISEL");
+let s1 = "ISEL";
 
 console.log("13.", s1.enclose); // Not exists!
 console.log("14.", s1.constructor);
@@ -126,6 +127,7 @@ console.log("19.", s1.substring(2, 4));
 // Modifying an existing method for good:
 console.log("20.", "Hello,".concat("LEIC ", "and ", "ISEL"));
 
+/*
 //Using a global variable to store the old implementation
 const oldConcat = String.prototype.concat; // Not recommended
 String.prototype.concat = function (...args) {
@@ -136,10 +138,11 @@ String.prototype.concat = function (...args) {
     //let newArgs = args.map(s => PREFIX + s);
     return oldConcat.apply(PREFIX + this, newArgs);
 }
+    */
 
 /*
 //Storing the old implementation in String prototype instead of in a global variable
-String.prototype.oldConcat = String.prototype.concat; // Not recommended
+String.prototype.oldConcat = String.prototype.concat;
 String.prototype.concat = function (...args) {
     const PREFIX = " #2# ";
     let newArgs = [];
@@ -149,7 +152,6 @@ String.prototype.concat = function (...args) {
 }
 */
 
-/*
 // Creating a new scope (block) to create a new closure
 {
     // Using a local variable to store the old implementation
@@ -162,6 +164,6 @@ String.prototype.concat = function (...args) {
         return oldConcat.apply(PREFIX + this, newArgs);
     };
 }
-*/
 
 console.log("21.", "Hello,".concat("LEIC ", "and ", "ISEL"));
+console.log(oldConcat);

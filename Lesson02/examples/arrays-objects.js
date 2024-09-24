@@ -1,3 +1,5 @@
+'use strict';
+
 // ----------------------------
 // Some object notations
 let o1 = {};
@@ -32,6 +34,7 @@ function showArguments(f) {
     return function (...args) {
 
         console.log(`   arguments: ${args}`);
+        console.log(this);
 
         let ret = f.apply(this, args);
 
@@ -55,7 +58,7 @@ const person = {
     surnames: ["Silva", "Nunes"],
     age: 20
 }
-personSerialized = JSON.stringify(person);
+let personSerialized = JSON.stringify(person);
 console.log("10.", personSerialized);
 // Do something with personSerialized (e.g., store or send)
 

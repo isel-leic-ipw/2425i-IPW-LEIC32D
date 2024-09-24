@@ -13,7 +13,9 @@ function myForEach(arr, callbackfn){
 const names = ['Ana', 'Bob'];
 myForEach(names, elem => console.log(elem));
 myForEach(names, function (elem){ console.log(elem);});
+
 names.forEach((elem) => console.log(elem));
+names.for
 
 // Modify all elements of an array to upper case (not possible with forEach!):
 names.forEach(elem => elem.toUpperCase()); // elem is a variable assigned to the elements of the array in the scope of the arrow function.
