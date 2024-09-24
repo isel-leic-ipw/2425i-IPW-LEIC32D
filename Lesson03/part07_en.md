@@ -124,7 +124,7 @@
 ### Basic Test Description
 - One or more files in JavaScript Language.
     - Files must be in `test` directory, by default.
-- Function `describe`: groups tests with a descrition string.
+- Function `describe`: groups tests with a description string.
 - Function `it`: individual test.
     - Has an *arrange* step to define values to test;
     - has an *act* step to call the function to test;
@@ -157,5 +157,9 @@
 
 ## Exercises
 
-1. Implement a test for a past exercise.
+1. Implement a test with Mocha for the item 1 (histogram) from the proposed exercise in part06.
+    - Examples of inputs and expected outputs:
+        - `"aaaa"` -> `{ a : 4 }`
+        - `"bbbb"` -> `{ a : 4, b : 4 }`
+        - `"BBb"` -> `{ a : 4, b : 7 }`
 
