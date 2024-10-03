@@ -8,4 +8,4 @@ while(x == 0) {
     console.log(count++, "waiting...");
 }
 
-console.log("End waiting, now I can rest!!!");
+console.log("End waiting, now I can rest!!!");cle

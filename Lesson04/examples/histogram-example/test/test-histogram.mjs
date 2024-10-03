@@ -1,14 +1,11 @@
-import { defHistogram } from '../histogram.mjs'
+import { defHistogram } from '../histogram.mjs';
 
-import assert from 'node:assert/strict'
+import assert from 'node:assert/strict';
 
 describe('Test Suite for histogram module', function () {
   // Arrange
   const histogram = defHistogram();
-
   it('should return {} for a empty string', function () {
-    // Arrange
-
     // Act 
     const ret = histogram("");
 
@@ -32,5 +29,14 @@ describe('Test Suite for histogram module', function () {
 
     // Assert
     assert.deepEqual(ret, {'a': 2, 'b': 2}, "Should return the object {'a': 2, 'b': 2}");
+  });
+  it("should return accumulated object {'a': 4, 'b': 4, 'c': 1} for the string 'aBbAc'", function () {
+    // Arrange
+
+    // Act 
+    const ret = histogram("aBbAc");
+
+    // Assert
+    assert.deepEqual(ret, {'a': 4, 'b': 4, 'c': 1}, "Should return the object {'a': 4, 'b': 4, 'c': 1}");
   });
 });
