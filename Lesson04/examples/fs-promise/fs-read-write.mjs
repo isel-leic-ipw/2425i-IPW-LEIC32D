@@ -9,8 +9,8 @@ console.log("BEGIN")
 //p.then(processFile)
 //p.catch(processError)
 
-readFile(INPUT_FILE)
-    .then(processFile)
+readFile(INPUT_FILE)    // Promise<Buffer>
+    .then(processFile)  // Promise<undefined>
     .catch(processError)
 
 console.log("END")

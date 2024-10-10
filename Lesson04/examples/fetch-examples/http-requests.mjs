@@ -2,11 +2,6 @@ const URL = "https://api.chucknorris.io/jokes/mdtKGns-QgSMtKPCSRnrNA";
 const URL1 = "https://api.chucknorris.io/jokes/mdtKGns-QgSMtKPCSRnrNA";
 //const URL1 = "https://eloquentjavascript.net/11_async.html"
 
-function processResponse(text) {
-    console.log(text.length);
-
-}
-
 const p1 = fetch(URL);   // Promise<Response>
 const p2 = fetch(URL1);  // Promise<Response>
 
@@ -51,3 +46,5 @@ function combineTwoPromiseNumbers(p1, p2, combiner) {
 
 combineTwoPromiseNumbers(p1, p2, (a, b) => a + b)
     .then(len => console.log(len));
+
+

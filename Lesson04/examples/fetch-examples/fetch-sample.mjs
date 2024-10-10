@@ -8,9 +8,14 @@ const URL_CHUCK_NORRIS_JOKE = "https://api.chucknorris.io/jokes/mLUozC5_T3uidSRn
 // const p = lenP.then(len => console.log(len));
 // p.catch((err) => {console.log("Error")});
 
-fetch(URL_CHUCK_NORRIS_JOKE)
-    .then(resp => resp.text())
-    .then(text => {console.log(text); return text})
-    .then(text => text.length)
-    .then(len => console.log(len))
+// fetch(URL_CHUCK_NORRIS_JOKE)        // Promise <Response>
+//     .then(resp => resp.text())      // Promise <String>
+//     .then(text => {console.log(text); return text}) // Promise <String>
+//     .then(text => text.length)      // Promise <Number>
+//     .then(len => console.log(len))
+//     .catch((err) => console.log("Error"));
+
+fetch(URL_CHUCK_NORRIS_JOKE)        // Promise <Response>
+    .then(resp => resp.json())      // Promise <Object>
+    .then(obj => console.log(obj.value)) // Promise <undefined>
     .catch((err) => console.log("Error"));

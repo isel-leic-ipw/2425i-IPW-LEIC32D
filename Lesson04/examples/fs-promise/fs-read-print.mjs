@@ -6,9 +6,11 @@ console.log("BEGIN");
 
 let line;
 
-//const p = readFile(INPUT_FILE); // Promise<Buffer>
-//const p1 = p.then(processFile); // Promise<undefined>
-//p.catch(processError);
+// const p = readFile(INPUT_FILE); // Promise<Buffer>
+// console.log(p);
+// const p1 = p.then(processFile); // Promise<undefined>
+// console.log(p1);
+// p.catch(processError);
 
 readFile(INPUT_FILE)
     .then(processFile)
