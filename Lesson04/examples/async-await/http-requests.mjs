@@ -38,11 +38,11 @@ async function combineLengthRequests2(){
     }
 }
 
-combineLengthRequests2()
-    .then(console.log)
-    .catch(e => console.error(e));
+// combineLengthRequests2()
+//     .then(console.log)
+//     .catch(e => console.error(e));
 
 // Test the faster execution with Promise.race:
-// Promise.race([combineLengthRequests(), combineLengthRequests2()])
-//      .then(console.log)
-//      .catch(e => console.error(e));
+Promise.race([combineLengthRequests(), combineLengthRequests2()])
+      .then(console.log)
+      .catch(e => console.error(e));
