@@ -1,0 +1,57 @@
+GET https://example.com/comments/1 HTTP/1.1
+
+###
+
+GET https://v3.football.api-sports.io/status
+x-apisports-key: <your key>
+
+###
+
+GET https://v3.football.api-sports.io/teams?id=228
+x-apisports-key: <your key>
+
+###
+
+GET https://v3.football.api-sports.io/teams?id=211
+x-apisports-key: <your key>
+
+###
+
+GET /teams?id=212
+Host: v3.football.api-sports.io
+x-apisports-key: <your key>
+
+
+###
+
+OPTIONS / HTTP/1.1
+Host: example.org
+
+
+###
+
+GET /teaching/webpage-sample HTTP/1.1
+Host: www.smplanet.com
+Accept: text/html,application/xhtml+xml
+Accept-Encoding: gzip, deflate
+Accept-Language: pt-PT,pt-BR,pt,en-US,en
+Cache-Control: max-age=0
+Connection: keep-alive
+If-Modified-Since: Mon, 03 Jun 2019 21:56:21 GMT
+If-None-Match: "790-58a726f45cb8f-gzip"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+
+###
+
+POST /post HTTP/1.1
+Host: postman-echo.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 27
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+
+field1=value1&field2=value2
+
+###
+
+GET http://localhost:8000/ HTTP/1.1

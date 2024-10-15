@@ -6,21 +6,22 @@ const urlArray = [
 
 promiseArray = urlArray.map(url => fetch(url));
 
+// Promise.all(promiseArray)
+//     .then(arrResp => {
+//         const arrPromiseText = [];
+//         for (let resp of arrResp)
+//             arrPromiseText.push(resp.text());
+//         return Promise.all(arrPromiseText);
+//     })
+//     .then(arrText => arrText.reduce((t1, t2) => t1.length + t2.length))
+//     .then(totalLen => console.log(totalLen))
+//     .catch(err => console.error("ERROR!"));
+
 Promise.all(promiseArray)
-    .then(arrResp => {
-        const arrPromiseText = [];
-        for (let resp of arrResp)
-            arrPromiseText.push(resp.text());
-        return Promise.all(arrPromiseText);
-    })
+    .then(arrResp => Promise.all(arrResp.map(resp => resp.text())))
     .then(arrText => arrText.reduce((t1, t2) => t1.length + t2.length))
     .then(totalLen => console.log(totalLen))
-    .catch(err => console.error("ERROR!"));
-
-// Promise.all(promiseArray)
-//     .then(arrResp => Promise.all(arrResp.map(resp => resp.text())))
-//     .then(arrText => arrText.reduce((t1, t2) => t1.length + t2.length))
-//     .then(totalLen => console.log(totalLen));
+    .catch(e => console.error("ERROR!!!", e));
 
 
 // An implementation of Promise.all:
