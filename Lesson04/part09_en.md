@@ -189,7 +189,7 @@
     ```
 - Example:
     - Objective: make multiple HTTP requests and get the length of the first response. 
-    - Available at: [examples/fetch-examples/promise-any.js](examples/fetch-examples/promise--any.js).
+    - Available at: [examples/fetch-examples/promise-any.js](examples/fetch-examples/promise-any.js).
 
 ### Promise race
 
