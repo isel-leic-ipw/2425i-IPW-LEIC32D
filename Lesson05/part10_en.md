@@ -309,4 +309,7 @@
 - View response:
     - Inspect mode in the browser, tab *Network*.
 
-## Examples with Fetch
+## Request Examples with Fetch
+
+- HTTP GET: [examples/test-http-get-fetch.mjs](examples/test-http-get-fetch.mjs)
+- HTTP POST: [examples/test-http-post-fetch.mjs](examples/test-http-post-fetch.mjs)
