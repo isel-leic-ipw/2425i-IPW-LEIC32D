@@ -1,5 +1,5 @@
 {
-  "name": "example-hello-express",
+  "name": "example-tasks-express",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,8 @@
   },
   "author": "Fernanda Passos",
   "license": "ISC",
-  "description": "Hello World Express",
+  "description": "Simple Task Manager App.",
   "dependencies": {
-    "cors": "^2.8.5",
     "express": "^4.21.1"
   }
 }
