@@ -1,6 +1,6 @@
 import express from 'express';
 
-const PORT = 7000;  // Port number for the tests
+const PORT = 8000;  // Port number for the tests
 const app = express(); // Express function returns an app
 
 // Single endpoint to URI "/"
@@ -16,7 +16,7 @@ app.listen(PORT, () =>
 
 function sendHello(req, res){
     console.log(req.headers);
-    res.send("Hello World3!");
+    res.send("Hello World!");
 }
 
 // Testing: go to the browser and access the URL: http://localhost:8000/
