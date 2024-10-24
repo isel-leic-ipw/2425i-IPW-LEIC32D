@@ -1,6 +1,8 @@
+###
+
 GET https://example.com/comments/1 HTTP/1.1
 
-###
+### Request to the football API
 
 GET https://v3.football.api-sports.io/status
 x-apisports-key: <your key>
@@ -55,3 +57,8 @@ field1=value1&field2=value2
 ###
 
 GET http://localhost:8000/ HTTP/1.1
+
+###
+
+GET / HTTP/1.1
+Host: localhost:8000

@@ -12,5 +12,5 @@ var requestOptions = {
   
   fetch("http://www.smplanet.com/teaching/webpage-sample", requestOptions)
     .then(response => response.text())
-    .then(headers => console.log(headers))
+    .then(text => console.log(text))
     .catch(error => console.log('error', error));

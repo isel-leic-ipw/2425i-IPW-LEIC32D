@@ -1,7 +1,7 @@
 let requestOptions = {
     method: 'POST',
     headers : {
-        "Host": "postman-echo.com",
+        //"Host": "postman-echo.com",
         //"Content-Type": "application/x-www-form-urlencoded",
         //"Content-Length": 27
         "Content-Type": "application/json",
