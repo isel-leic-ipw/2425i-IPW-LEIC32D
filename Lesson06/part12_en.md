@@ -70,7 +70,7 @@
 
 - Consider that each task has an owner user associated.
 - Example:
-    ```json
+    ```javascript
     {
         id: 4,
         title: "Study HTTP",
@@ -112,7 +112,7 @@
     token = crypto.randomUUID();
     ```
 - Example:
-    ```json
+    ```javascript
     {
         id: 1,
         name: "asilva",
