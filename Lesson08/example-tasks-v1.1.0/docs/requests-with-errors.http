@@ -34,6 +34,7 @@ Authorization: Bearer {{token}}
 
 ### Insert a task with invalid body
 # Expected error: internal code 3, status code 400
+# incorrect, property should be title
 POST http://localhost:8000/tasks HTTP/2
 Content-Type: application/json
 Authorization: Bearer {{token}}

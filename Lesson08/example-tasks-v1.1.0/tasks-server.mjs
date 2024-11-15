@@ -12,6 +12,7 @@ const swaggerDocument = yaml.load('./docs/tasks-api.yaml');
 app.use('/api-doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Parser the body to JSON
+// TODO: verify error for incorrect JSON
 app.use(express.json());
 
 // add user
