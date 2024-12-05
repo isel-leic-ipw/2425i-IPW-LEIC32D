@@ -309,9 +309,12 @@
 #### Métodos HTTP
 
 - Suporta apenas dois métodos: POST e GET.
-    - POST é o valor por omissão.
 - No POST, mensagem vai no corpo/body com o `Content_type` *URL-encoded*:
     - `application/x-www-form-urlencoded`
+- A mensagem vai no formato `chave=valor` separados por `&` e depende do tipo de entrada no formulário:
+    - chave: valor do campo "name";
+    - valor: valor do campo "value" ou valor de entrada (*e.g.*, valor da caixa de texto).
+    - Exemplo: `fname="Ana"&lname="Silva"`
 
 #### Método GET
 
