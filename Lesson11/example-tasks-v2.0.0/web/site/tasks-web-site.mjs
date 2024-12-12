@@ -14,11 +14,6 @@ export default function init(tasksServices){
   return {
     ensureToken,
     handlerError,
-    /*getAllTasks: local_getAllTasks,
-    getTask: local_getTask,
-    addTask: local_addTask,
-    updateTask: local_updateTask,
-    deleteTask: local_deleteTask*/
     getAllTasks: processRequest(local_getAllTasks),
     getTask: processRequest(local_getTask),
     addTask: processRequest(local_addTask),
@@ -34,15 +29,15 @@ export default function init(tasksServices){
   }
 
   function ensureToken(req, res, next){
-      const token = getToken(req);
-      //console.log("Token:", token);
-      if (token){
-        req.userToken = token;
-        next();
-      }
-      else {
-        next(errors.MISSING_TOKEN());
-      }
+    const token = getToken(req);
+    console.log("Token:", token);
+    if (token){
+      req.userToken = token;
+      next();
+    }
+    else {
+      next(errors.MISSING_TOKEN());
+    }
   }
 
   function handlerError (err, req, res, next) {
@@ -53,38 +48,35 @@ export default function init(tasksServices){
   function getResponseError(res, err){
     //console.log(err);
     const responseError = errorToHttp(err);
+    // TODO: Show the error in a HTML page.
     res.status(responseError.status);
-    return res.json(responseError.body); 
+    return res.render("errors-view", responseError.body);
+    //return res.json(responseError.body);
   }
 
   function local_getAllTasks(req, res){
     const tasksPromise = tasksServices.getAllTasks(req.userToken)
-    return tasksPromise.then(tasks => res.json(tasks));
+    return tasksPromise.then(tasks => res.render("tasks-view", {tasks}));
   }
 
   function local_getTask(req, res){
     const taskId = req.params.taskId;
     const taskPromise = tasksServices.getTask(taskId, req.userToken);
-    return taskPromise.then(task => res.json(task));
+    return taskPromise.then(task => res.render("task-view", task));
   }
 
   function local_addTask(req, res){
     const taskPromise = tasksServices.addTask(req.body, req.userToken);
     return taskPromise.then(task => {
       res.status(201);
-      return res.send({
-        status: `Task ${task.id} was added!`,
-        task: task
-      });
+      return res.redirect("/site/tasks");
     });
   }
 
   function local_deleteTask(req, res){
     const taskId = req.params.taskId;
     const deleteTaskPromise = tasksServices.deleteTask(taskId, req.userToken);
-    return deleteTaskPromise.then(
-      deleteTask => res.json({})
-    );
+    return res.redirect("/site/tasks");
   }
 
   function local_updateTask(req, res){
@@ -92,21 +84,14 @@ export default function init(tasksServices){
     const newTask = req.body;
     const userToken = req.userToken;
     const updatedTaskPromise = tasksServices.updateTask(taskId, newTask, userToken);
-    return updatedTaskPromise.then(
-      updatedTask => res.json({})
-    );
+    return res.redirect("/site/tasks");
   }
 
   // Auxiliary module function
   function getToken(req) {
-    const authToken = req.get("Authorization");
-    if (authToken){
-      //console.log(authToken);
-      const tokenParts = authToken.split(" ");
-      if(tokenParts && tokenParts[0] == "Bearer") {
-          return tokenParts[1];
-      }
-    }
+    // TODO: add Web site authentication (after, in the last classes)
+    //return "86130b25-a37e-4f19-9842-549b2fd5bb2c"; // asilva in Elastic DB
+    return "b0506867-77c3-4142-9437-1f627deebd67"; // asilva in Memory
   }
 
 }
