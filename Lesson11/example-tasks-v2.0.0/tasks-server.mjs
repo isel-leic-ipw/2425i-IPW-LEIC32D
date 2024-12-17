@@ -108,8 +108,8 @@ if (tasksAPI && usersAPI && tasksSite){
   app.post("/site/tasks/:taskId?/update", tasksSite.updateTask);
   
   // Handling all errors
-  app.use("/site*", tasksAPI.handlerError);
-  app.use("/tasks*", tasksSite.handlerError);
+  app.use("/site*", tasksSite.handlerError);
+  app.use("/tasks*", tasksAPI.handlerError);
   
   // App listening...
   app.listen(PORT, () =>
